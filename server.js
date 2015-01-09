@@ -67,7 +67,7 @@ var cheerio = require('cheerio');
           id_obj.idNo = (tr_array[index].attribs.onmouseover).replace(/\D/g,''); // ID, unique ID from gradcafe?
 
           id_obj.school = tr_array[index].children[0].children[0].data; //University
-          id_obj.program = tr_array[index].children[1].children[0].data.substring(0, tr_array[index].children[1].children[0].data.length - 6); //program etc
+          id_obj.program = tr_array[index].children[1].children[0].data.substring(0, tr_array[index].children[1].children[0].data.length - 6).replace(",",""); //program etc
           id_obj.decision = tr_array[index].children[2].children[0].children[0].data; //accepted/rejected
 
           if (typeof(tr_array[index].children[3].children[0]) === 'undefined')
